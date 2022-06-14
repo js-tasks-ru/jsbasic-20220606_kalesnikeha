@@ -10,7 +10,11 @@ function print(text) {
  * чтобы функция sayHello работала корректно
  */
 function isValid(name) {
-  // ваш код...
+  if (!name) return false
+  if (typeof name !== "string") return false
+  regexp = /^[A-Za-z0-9]{4,}$/;
+  return regexp.test(name)
+
 }
 
 function sayHello() {
