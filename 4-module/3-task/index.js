@@ -1,10 +1,11 @@
 function highlight(table) {
   for (let row of table.rows) {
 
-    if (row.cells[3].dataset) {
-      let dsClass = row.cells[3].dataset.available === 'true' ? "available" : "unavailable";
-      row.classList.add(dsClass);
-    } else {
+    if (row.cells[3].dataset.available === 'true') {
+      row.classList.toggle('available', true);
+    } else if (row.cells[3].dataset.available === 'false') {
+      row.classList.toggle('unavailable', true);
+    } else if (!row.cells[3].hasAttribute('data-available')) {
       row.hidden = true;
     }
 
