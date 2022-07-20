@@ -22,7 +22,7 @@ export default class RibbonMenu {
     this.selectedItem.classList.add('ribbon__item_active');
   }
 
-  initScroll(){
+  initScroll() {
     this.nav.addEventListener('scroll', e => {
       let scrollWidth = this.nav.scrollWidth;
       let scrollLeft = this.nav.scrollLeft;
